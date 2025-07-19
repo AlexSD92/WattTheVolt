@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WattTheVolt</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+  <h1>⚡ WattTheVolt</h1>
+  <p>Welcome to my blog about energy, tech, and everything electric.</p>
+  <ul id="post-list"></ul>
+
+  <h2>💌 Subscribe to the newsletter</h2>
+  <form action="mailto:your@email.com" method="POST" enctype="text/plain">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+
+  <h2>📩 Ask me anything</h2>
+  <form action="mailto:your@email.com" method="POST" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <textarea name="message" rows="4" placeholder="Your message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <script src="js/main.js"></script>
+
+  <!-- Google AdSense (uncomment and replace ca-pub-xxxxxxxxxxxxxxxx to enable) -->
+  <!--
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  -->
+
+
+<footer>
+  <hr>
+  <p style="text-align: center;">
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms-of-service.html">Terms of Service</a> |
+    <a href="contact.html">Contact</a><br>
+    &copy; 2025 WattTheVolt
+  </p>
+</footer>
+
+
+  <input type="text" id="searchInput" placeholder="Search posts..." style="width:100%;padding:0.5rem;margin:1rem 0;" />
+
+  <script>
+    // Search/filter posts
+    document.getElementById("searchInput").addEventListener("input", function() {
+      const query = this.value.toLowerCase();
+      const items = document.querySelectorAll("#post-list li");
+      items.forEach(item => {
+        item.style.display = item.textContent.toLowerCase().includes(query) ? "" : "none";
+      });
+    });
+
+    // Load footer from component
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("beforeend", data);
+      });
+  </script>
+
+</body>
+</html>

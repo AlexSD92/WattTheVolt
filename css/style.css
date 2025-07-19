@@ -1,0 +1,39 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    color: #212529;
+    padding: 2rem;
+    max-width: 700px;
+    margin: auto;
+}
+h1, h2 {
+    color: #0074d9;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #0074d9;
+}
+a:hover {
+    text-decoration: underline;
+}
+form {
+    margin-top: 2rem;
+}
+input, textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}
+button {
+    background: #0074d9;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
