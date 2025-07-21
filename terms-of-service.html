@@ -1,31 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Terms of Service - WattTheVolt</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <h1>Terms of Service</h1>
-  <p><strong>Effective Date:</strong> July 2025</p>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Terms of Service - WattTheVolt</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <script>
+            // Load sitename from component
+            fetch('components/sitename.html')
+                .then((res) => res.text())
+                .then((data) => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+        </script>
+        <h1>Terms of Service</h1>
+        <p><strong>Effective Date:</strong> July 2025</p>
 
-  <p>Welcome to WattTheVolt. By using this website, you agree to the following terms:</p>
+        <p>
+            Welcome to WattTheVolt. By using this website, you agree to the
+            following terms:
+        </p>
 
-  <h2>1. Content</h2>
-  <p>All content on WattTheVolt is for informational purposes only. We make no guarantees regarding its accuracy or applicability.</p>
+        <h2>1. Content</h2>
+        <p>
+            All content on WattTheVolt is for informational purposes only. We
+            make no guarantees regarding its accuracy or applicability.
+        </p>
 
-  <h2>2. Use of Site</h2>
-  <p>You agree to use the site for lawful purposes only and not to disrupt or harm the site or other users.</p>
+        <h2>2. Use of Site</h2>
+        <p>
+            You agree to use the site for lawful purposes only and not to
+            disrupt or harm the site or other users.
+        </p>
 
-  <h2>3. Emails and Communication</h2>
-  <p>By submitting your email, you consent to receiving updates. You may unsubscribe at any time. We do not sell or share your email with third parties.</p>
+        <h2>3. Emails and Communication</h2>
+        <p>
+            By submitting your email, you consent to receiving updates. You may
+            unsubscribe at any time. We do not sell or share your email with
+            third parties.
+        </p>
 
-  <h2>4. Third-Party Services</h2>
-  <p>We use services such as Google AdSense and Google Analytics. By using this site, you acknowledge their presence and agree to their terms.</p>
+        <h2>4. Third-Party Services</h2>
+        <p>
+            We use services such as Google AdSense and Google Analytics. By
+            using this site, you acknowledge their presence and agree to their
+            terms.
+        </p>
 
-  <h2>5. Contact</h2>
-  <p>If you have any questions, please <a href="contact.html">contact us</a>.</p>
+        <h2>5. Contact</h2>
+        <p>
+            If you have any questions, please
+            <a href="contact.html">contact us</a>.
+        </p>
 
-  <p><a href="index.html">← Back to Home</a></p>
-</body>
+        <script>
+            // Load footer from component
+            fetch('components/footer.html')
+                .then((res) => res.text())
+                .then((data) => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        </script>
+    </body>
 </html>

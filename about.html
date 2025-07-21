@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Contact - WattTheVolt</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <script>
+            // Load sitename from component
+            fetch('components/sitename.html')
+                .then((res) => res.text())
+                .then((data) => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+        </script>
+        <h1>About</h1>
+        <p>
+            WattTheVolt is a blog about starting from scratch - and wiring up a
+            new future.
+        </p>
+        <br />
+        <p>
+            I'm 33, switching careers, and learning to become an electrician in
+            the UK through hands-on training and hard-earned lessons. This space
+            documents my real, unfiltered journey - from study notes and tool
+            reviews to failed attempts and first wins.
+        </p>
+        <br />
+        <p>
+            Whether you're a fellow trainee, a career changer, or a curious
+            DIYer, you're welcome here. I'm no expert - just someone figuring it
+            out one circuit at a time, and sharing everything I learn to help
+            others do the same.
+        </p>
+        <br />
+        <p>
+            If you're starting late, learning fast, or just wondering if you can
+            pull it off, this blog is proof that you can.
+        </p>
+        <script>
+            // Load footer from component
+            fetch('components/footer.html')
+                .then((res) => res.text())
+                .then((data) => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        </script>
+    </body>
+</html>
