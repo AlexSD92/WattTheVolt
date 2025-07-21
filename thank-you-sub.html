@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Contact - WattTheVolt</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <script>
+            // Load sitename from component
+            fetch('components/sitename.html')
+                .then((res) => res.text())
+                .then((data) => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                });
+        </script>
+        <h1>Thank you for subscribing!</h1>
+        <p>Keep a look out for our emails...</p>
+
+        <script>
+            // Load footer from component
+            fetch('components/footer.html')
+                .then((res) => res.text())
+                .then((data) => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+        </script>
+    </body>
+</html>

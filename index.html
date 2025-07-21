@@ -31,15 +31,19 @@
 
         <h2>💌 Subscribe to the newsletter</h2>
         <form
-            action="mailto:no-reply@email.com"
+            action="https://formsubmit.co/no-reply@wattthevolt.com"
             method="POST"
-            enctype="text/plain"
         >
             <input
                 type="email"
                 name="email"
                 placeholder="Enter your email"
                 required
+            />
+            <input
+                type="hidden"
+                name="_next"
+                value="https://wattthevolt.com/thank-you-sub.html"
             />
             <button type="submit">Subscribe</button>
         </form>
@@ -48,9 +52,8 @@
 
         <h2>📩 Ask me anything</h2>
         <form
-            action="mailto:no-reply@wattthevolt.com"
+            action="https://formsubmit.co/no-reply@wattthevolt.com"
             method="POST"
-            enctype="text/plain"
         >
             <input type="text" name="name" placeholder="Your name" required />
             <input
@@ -64,6 +67,11 @@
                 rows="4"
                 placeholder="Your message"
             ></textarea>
+            <input
+                type="hidden"
+                name="_next"
+                value="https://wattthevolt.com/thank-you-email.html"
+            />
             <button type="submit">Send Message</button>
         </form>
 
