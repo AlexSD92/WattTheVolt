@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <title>WattTheVolt</title>
         <link rel="stylesheet" href="css/style.css" />
+
+        <!-- Google Analytics -->
         <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-59DH405Z31"
@@ -18,8 +20,8 @@
         </script>
     </head>
     <body>
+        <!-- Site name component -->
         <script>
-            // Load sitename from component
             fetch('components/sitename.html')
                 .then((res) => res.text())
                 .then((data) => {
@@ -37,19 +39,14 @@
                 placeholder="Enter your email"
                 required
             />
+            <input type="hidden" name="_captcha" value="false" />
             <button type="submit">Subscribe</button>
         </form>
 
         <hr style="border: none; border-top: 1px solid #ccc; margin: 2rem 0" />
 
         <h2>📧 Ask me anything</h2>
-
-        <form
-            id="contact-form"
-            action="https://formsubmit.co/alex@wattthevolt.com"
-            method="POST"
-            onsubmit="handleContactSubmit(event)"
-        >
+        <form id="contact-form">
             <input type="text" name="name" placeholder="Your name" required />
             <input
                 type="email"
@@ -62,29 +59,13 @@
                 rows="4"
                 placeholder="Your message"
             ></textarea>
-
             <input type="hidden" name="_captcha" value="false" />
-
             <button type="submit">Send Message</button>
         </form>
 
         <hr style="border: none; border-top: 1px solid #ccc; margin: 2rem 0" />
 
-        <script src="js/main.js"></script>
-
-        <!-- Google AdSense (uncomment and replace ca-pub-xxxxxxxxxxxxxxxx to enable) -->
-        <!--
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  -->
-
+        <!-- Search box -->
         <input
             type="text"
             id="searchInput"
@@ -92,8 +73,15 @@
             style="width: 100%; padding: 0.5rem; margin: 1rem 0"
         />
 
+        <!-- Footer component -->
         <script>
-            // Search/filter posts
+            fetch('components/footer.html')
+                .then((res) => res.text())
+                .then((data) => {
+                    document.body.insertAdjacentHTML('beforeend', data);
+                });
+
+            // Search filter
             document
                 .getElementById('searchInput')
                 ?.addEventListener('input', function () {
@@ -107,15 +95,10 @@
                             : 'none';
                     });
                 });
+        </script>
 
-            // Load footer
-            fetch('components/footer.html')
-                .then((res) => res.text())
-                .then((data) => {
-                    document.body.insertAdjacentHTML('beforeend', data);
-                });
-
-            // Unified async form handler
+        <!-- Unified form handler -->
+        <script>
             async function handleFormSubmit(formId, redirectUrl) {
                 const form = document.getElementById(formId);
                 if (!form) return;
@@ -129,31 +112,31 @@
                             'https://formsubmit.co/alex@wattthevolt.com',
                             {
                                 method: 'POST',
-                                body: formData,
-                                headers: {
-                                    Accept: 'application/json'
-                                }
+                                headers: { Accept: 'application/json' },
+                                body: formData
                             }
                         );
 
                         if (response.ok) {
-                            await response.json(); // give FormSubmit time to process
+                            await response.json();
                             setTimeout(() => {
                                 window.location.href = redirectUrl;
-                            }, 500); // small delay for reliability
+                            }, 300);
                         } else {
-                            alert('Submission failed. Please try again.');
+                            alert('Form submission failed. Please try again.');
                         }
                     } catch (error) {
-                        console.error('Submission error:', error);
-                        alert('A network error occurred.');
+                        console.error('Form error:', error);
+                        alert('Network error. Please try again.');
                     }
                 });
             }
 
-            // Attach handlers to both forms
             handleFormSubmit('subscribe-form', '/thank-you-sub.html');
             handleFormSubmit('contact-form', '/thank-you-email.html');
         </script>
+
+        <!-- Your custom JS -->
+        <script src="js/main.js"></script>
     </body>
 </html>
