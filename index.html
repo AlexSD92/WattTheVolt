@@ -32,21 +32,28 @@
         <ul id="post-list"></ul>
 
         <h2>💌 Subscribe to the newsletter</h2>
-        <form id="subscribe-form">
+
+        <form action="https://formsubmit.co/alex@wattthevolt.com" method="POST">
             <input
                 type="email"
                 name="email"
                 placeholder="Enter your email"
                 required
             />
-            <input type="hidden" name="_captcha" value="false" />
+            <input
+                type="hidden"
+                name="_next"
+                value="https://www.wattthevolt.com/thank-you-sub.html"
+            />
+
             <button type="submit">Subscribe</button>
         </form>
 
         <hr style="border: none; border-top: 1px solid #ccc; margin: 2rem 0" />
 
         <h2>📧 Ask me anything</h2>
-        <form id="contact-form">
+
+        <form action="https://formsubmit.co/alex@wattthevolt.com" method="POST">
             <input type="text" name="name" placeholder="Your name" required />
             <input
                 type="email"
@@ -59,7 +66,11 @@
                 rows="4"
                 placeholder="Your message"
             ></textarea>
-            <input type="hidden" name="_captcha" value="false" />
+            <input
+                type="hidden"
+                name="_next"
+                value="https://www.wattthevolt.com/thank-you-email.html"
+            />
             <button type="submit">Send Message</button>
         </form>
 
@@ -95,45 +106,6 @@
                             : 'none';
                     });
                 });
-        </script>
-
-        <!-- Unified form handler -->
-        <script>
-            async function handleFormSubmit(formId, redirectUrl) {
-                const form = document.getElementById(formId);
-                if (!form) return;
-
-                form.addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    const formData = new FormData(form);
-
-                    try {
-                        const response = await fetch(
-                            'https://formsubmit.co/alex@wattthevolt.com',
-                            {
-                                method: 'POST',
-                                headers: { Accept: 'application/json' },
-                                body: formData
-                            }
-                        );
-
-                        if (response.ok) {
-                            await response.json();
-                            setTimeout(() => {
-                                window.location.href = redirectUrl;
-                            }, 300);
-                        } else {
-                            alert('Form submission failed. Please try again.');
-                        }
-                    } catch (error) {
-                        console.error('Form error:', error);
-                        alert('Network error. Please try again.');
-                    }
-                });
-            }
-
-            handleFormSubmit('subscribe-form', '/thank-you-sub.html');
-            handleFormSubmit('contact-form', '/thank-you-email.html');
         </script>
 
         <!-- Your custom JS -->
