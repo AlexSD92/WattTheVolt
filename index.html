@@ -30,30 +30,19 @@
         <ul id="post-list"></ul>
 
         <h2>💌 Subscribe to the newsletter</h2>
-        <form
-            id="subscribe-form"
-            action="https://formsubmit.co/alex@wattthevolt.com"
-            method="POST"
-        >
+        <form id="subscribe-form">
             <input
                 type="email"
                 name="email"
                 placeholder="Enter your email"
                 required
             />
-            <!-- <input
-                type="hidden"
-                name="_next"
-                value="https://wattthevolt.com/thank-you-sub.html"
-            /> -->
             <button type="submit">Subscribe</button>
         </form>
 
         <hr style="border: none; border-top: 1px solid #ccc; margin: 2rem 0" />
 
         <h2>📧 Ask me anything</h2>
-
-        <a href="thank-you-sub.html">Thank you sub</a>
 
         <form
             id="contact-form"
@@ -130,8 +119,8 @@
                 .getElementById('subscribe-form')
                 .addEventListener('submit', function (e) {
                     e.preventDefault();
-
                     const formData = new FormData(this);
+
                     fetch('https://formsubmit.co/no-reply@wattthevolt.com', {
                         method: 'POST',
                         body: formData,
@@ -139,15 +128,15 @@
                     })
                         .then((response) => {
                             if (response.ok) {
-                                window.location.href =
-                                    'https://wattthevolt.com/thank-you-sub.html';
+                                // ✅ This redirect will work
+                                window.location.href = '/thank-you-sub.html';
                             } else {
-                                alert('Failed to submit form.');
+                                alert('Form failed. Try again.');
                             }
                         })
                         .catch((error) => {
                             console.error(error);
-                            alert('Error occurred.');
+                            alert('Network error.');
                         });
                 });
         </script>
