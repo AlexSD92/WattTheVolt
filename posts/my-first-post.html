@@ -12,7 +12,7 @@
     <body>
         <!-- Site name component -->
         <script>
-            fetch('components/sitename.html')
+            fetch('../components/sitename.html')
                 .then((res) => res.text())
                 .then((data) => {
                     document.body.insertAdjacentHTML('afterbegin', data);
