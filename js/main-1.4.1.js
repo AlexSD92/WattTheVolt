@@ -9,6 +9,10 @@ if (postList) {
         {
             file: '3-balancing-study-family-and-sunshine-part-2.html',
             title: 'Balancing Studying, Family, & Sunshine - Part 2'
+        },
+        {
+            file: '4-back-on-the-bandwagon.html',
+            title: 'Back on the Bandwagon'
         }
     ];
 
