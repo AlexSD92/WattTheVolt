@@ -13,7 +13,10 @@ if (postList) {
         {
             file: '4-back-on-the-bandwagon.html',
             title: 'Back on the Bandwagon'
-        }
+        },
+        {file: '5-life-lately.html',
+            title: 'Life Lately'
+        },
     ];
 
     posts.forEach((post) => {
