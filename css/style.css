@@ -14,28 +14,43 @@ ul {
     list-style: none;
     padding: 0;
 }
+
 a {
     text-decoration: none;
     color: #0074d9;
+    /* margin: auto; */
+    flex: .2;
 }
 a:hover {
     text-decoration: underline;
 }
+
 form {
-    margin-top: 2rem;
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
-input, textarea {
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
+
+input[type="email"],
+input[type="text"],
+textarea {
+  flex: 1;
+  min-width: 100px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* makes border/padding consistent */
+  border-radius: 3px;     /* optional, for uniform look */
 }
+
 button {
-    background: #0074d9;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
+  width: 100%;
+  background: #0074d9;
+  color: white;
+  padding: 0.25rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 
@@ -51,4 +66,12 @@ button {
     input, textarea, button {
         font-size: 1rem;
     }
+    input[type="email"] {
+        flex: 1; /* take remaining space */
+  }
+  
+    button {
+        flex: 0 0 auto; /* stay natural size */
+        align-self: center; /* vertically aligns with input */
+  }
 }
