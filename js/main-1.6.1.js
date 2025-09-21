@@ -14,7 +14,8 @@ if (postList) {
             file: '4-back-on-the-bandwagon.html',
             title: 'Back on the Bandwagon'
         },
-        { file: '5-life-lately.html', title: 'Life Lately' }
+        { file: '5-life-lately.html', title: 'Life Lately' },
+        { file: '6-ai-vs-trade.html', title: 'AI vs Trade' }
     ];
 
     posts.forEach((post) => {
