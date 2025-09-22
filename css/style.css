@@ -13,12 +13,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    /* background: #f8f9fa; */
-    /* color: #212529; */
     padding: 2rem;
     max-width: 700px;
     margin: auto;
-    background: radial-gradient(circle at top left, #1a1a1a, #000000);
+    /* background: radial-gradient(circle at top left, #1a1a1a, #000000); */
+    background-color: var(--background-dark);
     color: var(--text-light);
 }
 
@@ -35,6 +34,21 @@ body {
             transparent 40%
         );
     animation: lightning 6s infinite;
+    border-radius: 25px;
+    padding: 3em;
+    text-align: left;
+}
+
+.title-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem; /* spacing between img and h1 */
+}
+
+#tagline {
+    margin-top: 0.5rem;
+    display: block;
 }
 
 @keyframes lightning {
@@ -57,16 +71,69 @@ h2 {
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+}
+li > a {
+    text-decoration: none;
 }
 
-a {
-    text-decoration: none;
-    color: #0074d9;
-    /* margin: auto; */
-    flex: 0.2;
+li > a:visited,
+nav > a:active {
+    color: inherit;
 }
-a:hover {
-    text-decoration: underline;
+
+nav > a {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    color: var(--blue-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 1; /* ensure text stays on top of glow */
+}
+nav > a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%; /* make glow bigger than text box */
+    height: 120%;
+    border-radius: 9999px;
+    background: radial-gradient(
+        circle,
+        var(--blue),
+        var(--yellow),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0; /* sit behind text but above background */
+    filter: blur(20px); /* stronger glow */
+}
+
+nav > a:hover {
+    color: var(--copper);
+    text-shadow: 0 0 5px var(--yellow), 0 0 5px var(--yellow-highlight),
+        0 0 10px var(--blue);
+}
+
+nav > a:hover::before {
+    opacity: 0.8;
+}
+
+#post-list {
+    background-color: var(--background-section);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.--bg-dark {
+    background-color: var(--background-section);
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
 }
 
 form {

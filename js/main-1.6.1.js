@@ -7,7 +7,7 @@ if (postList) {
             title: 'Balancing Studying, Family, & Sunshine'
         },
         {
-            file: '3-balancing-study-family-and-sunshine-part-2.html',
+            file: '3-balancing-study-family-and-sunshine-part-2 copy.html',
             title: 'Balancing Studying, Family, & Sunshine - Part 2'
         },
         {

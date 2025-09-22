@@ -32,58 +32,75 @@
 
         <ul id="post-list"></ul>
 
-        <h2>💌 Subscribe to the newsletter</h2>
+        <div class="--bg-dark">
+            <h2>💌 Subscribe to the newsletter</h2>
 
-        <form action="https://formsubmit.co/alex@wattthevolt.com" method="POST">
+            <form
+                action="https://formsubmit.co/alex@wattthevolt.com"
+                method="POST"
+            >
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                />
+                <input
+                    type="hidden"
+                    name="_next"
+                    value="https://www.wattthevolt.com/thank-you-sub.html"
+                />
+
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- <hr style="border: none; border-top: 1px solid #ccc; margin: 2rem 0" /> -->
+
+        <div class="--bg-dark">
+            <h2>📧 Ask me anything</h2>
+
+            <form
+                action="https://formsubmit.co/alex@wattthevolt.com"
+                method="POST"
+            >
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your email"
+                    required
+                />
+                <textarea
+                    name="message"
+                    rows="1"
+                    placeholder="Your message"
+                ></textarea>
+                <input
+                    type="hidden"
+                    name="_next"
+                    value="https://www.wattthevolt.com/thank-you-email.html"
+                />
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- <hr style="border: none; border-top: 1px solid #ccc; margin: 2rem 0" /> -->
+
+        <div class="--bg-dark">
+            <!-- Search box -->
             <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                required
+                type="text"
+                id="searchInput"
+                placeholder="Search posts..."
+                style="width: 100%; padding: 0.5rem; margin: 1rem 0"
             />
-            <input
-                type="hidden"
-                name="_next"
-                value="https://www.wattthevolt.com/thank-you-sub.html"
-            />
-
-            <button type="submit">Subscribe</button>
-        </form>
-
-        <hr style="border: none; border-top: 1px solid #ccc; margin: 2rem 0" />
-
-        <h2>📧 Ask me anything</h2>
-
-        <form action="https://formsubmit.co/alex@wattthevolt.com" method="POST">
-            <input type="text" name="name" placeholder="Your name" required />
-            <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                required
-            />
-            <textarea
-                name="message"
-                rows="1"
-                placeholder="Your message"
-            ></textarea>
-            <input
-                type="hidden"
-                name="_next"
-                value="https://www.wattthevolt.com/thank-you-email.html"
-            />
-            <button type="submit">Send Message</button>
-        </form>
-
-        <hr style="border: none; border-top: 1px solid #ccc; margin: 2rem 0" />
-
-        <!-- Search box -->
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search posts..."
-            style="width: 100%; padding: 0.5rem; margin: 1rem 0"
-        />
+        </div>
 
         <!-- Footer component -->
         <script>
